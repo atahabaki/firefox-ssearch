@@ -110,7 +110,6 @@ function dataChanged() {
 }
 
 browser.omnibox.onInputEntered.addListener((text, disposition) => {
-    disposition = "currentTab";
     var arr, site, query;
     arr = text.split(' ');
     let operation = arr[0];
@@ -157,9 +156,18 @@ browser.omnibox.onInputEntered.addListener((text, disposition) => {
             arr.shift();
             query = arr.join(" ").trim();
             var createdurl = createURL(site,query);
-            browser.tabs.update({
-                url: createdurl
-            });
+            console.log("CreatedURL:",createdurl)
+            switch (disposition) {
+                case "currentTab":
+                    browser.tabs.update({url:createdurl});
+                    break;
+                case "newForegroundTab":
+                    browser.tabs.create({url:createdurl});
+                    break;
+                case "newBackgroundTab":
+                    browser.tabs.create({url:createdurl, active: false});
+                    break;
+            }
         }
     }
 });
