@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "ssearch",
+    "version": "4.0",
+    "description": "Multi-search engine for omnibox. Just type \"@\" then see the magic",
+    "background": {
+        "scripts": [
+            "app.js"
+        ],
+        "persistent": true
+    },
+    "permissions": [
+        "storage"
+    ],
+    "omnibox": {
+        "keyword": "@"
+    }
+}
