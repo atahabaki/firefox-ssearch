@@ -1,10 +1,12 @@
-# firefox-smartbox
+# firefox-ssearch
 
-`smartbox v4.1`
+`ssearch v4.1`
 
 Searching would not be much simpler. Just type "@" in URL bar. Then type the search engine you wanna search e.g. 'ytb', 'ggl', 'bng' etc. Then type the search string.
 
 Use it well...
+
+This is port of [chrome-smartbox](https://github.com/atahabaki/chrome-smartbox)
 
 ## Available Search Engines & Keywords
 
