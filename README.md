@@ -1,6 +1,6 @@
 # firefox-ssearch
 
-`ssearch v4.1`
+`ssearch v4.2`
 
 Searching would not be much simpler. Just type "@" in URL bar. Then type the search engine you wanna search e.g. 'ytb', 'ggl', 'bng' etc. Then type the search string.
 

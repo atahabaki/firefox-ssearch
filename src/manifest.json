@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "ssearch",
+    "version": "4.2",
+    "description": "Implements simple and easy to use search engine.",
+    "background": {
+        "scripts": [
+            "app.js"
+        ]
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs"
+    ],
+    "omnibox": {
+        "keyword": "@"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{8ae9f7d7-e9b6-493c-b8f1-7a6e3079fc90}"
+        }
+    }
+}
