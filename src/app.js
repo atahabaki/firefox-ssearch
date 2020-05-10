@@ -36,19 +36,9 @@ var sites = [
         "url":"https://search.yahoo.com/?q={%query%}"
     },
     {
-        "name":"trryn",
-        "desc":"Torrent Oyun İndir",
-        "url":"https://www.torrentoyunindir.com/?s={%query%}"
-    },
-    {
         "name":"ydex",
         "desc":"Yandex",
         "url":"https://yandex.com/search/?text={%query%}"
-    },
-    {
-        "name":"itebx",
-        "desc":"All IT e-Books",
-        "url":"http://allitebooks.org/?s={%query%}"
     },
     {
         "name":"iconf",
@@ -59,11 +49,6 @@ var sites = [
         "name":"rddt",
         "desc":"Reddit",
         "url":"https://www.reddit.com/search/?q={%query%}"
-    },
-    {
-        "name":"trrmfy",
-        "desc":"TorrentMafya",
-        "url":"https://www.torrentmafya.net/?s={%query%}"
     },
     {
         "name":"gthb",
