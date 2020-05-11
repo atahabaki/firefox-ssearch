@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ssearch",
-    "version": "4.3",
+    "version": "4.4",
     "description": "Implements simple and easy to use search engine.",
     "background": {
         "scripts": [
@@ -15,6 +15,17 @@
     ],
     "omnibox": {
         "keyword": "@"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16":"smartbox@min.png",
+            "32":"smartbox@mid-low.png"
+        }
+    },
+    "icons": {
+        "48":"smartbox.png",
+        "96":"smartbox@2x.png",
+        "128": "smartbox@max.png"
     },
     "browser_specific_settings": {
         "gecko": {
