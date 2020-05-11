@@ -1,4 +1,3 @@
-"use strict";
 var sites = [
     {
         "name":"ytb",
@@ -61,7 +60,6 @@ var sites = [
 function save() {
     browser.storage.local.set({"ssearch_sites":sites}, () => {
         console.log("Saved!",sites);
-        sites = sites;
     });
 }
 
@@ -75,8 +73,11 @@ function load() {
 browser.runtime.onInstalled.addListener((details) => {
     if (details.reason == "install") {
         console.log("First install");
+        browser.tabs.create({
+            url: "https://github.com/atahabaki/firefox-ssearch",
+            active: true
+        });
         save();
-        load();
     }
 });
 
@@ -92,7 +93,6 @@ function createURL(site,query) {
 
 function dataChanged() {
 	save();
-	load();
 }
 
 browser.omnibox.onInputEntered.addListener((text, disposition) => {
@@ -112,7 +112,7 @@ browser.omnibox.onInputEntered.addListener((text, disposition) => {
                 "url":url
             }
         );
-				dataChanged();
+        dataChanged();
     }
     else if (operation === "-") {
         for (var i = 0; i < sites.length; i++) {
@@ -120,13 +120,13 @@ browser.omnibox.onInputEntered.addListener((text, disposition) => {
                 sites.splice(i,1);
             }
         }
-				dataChanged();
+        dataChanged();
     }
     else if (operation === "<=" ) {
         let temp = text.substring(text.indexOf("["));
         let temp_sites = JSON.parse(temp);
         sites = temp_sites;
-				dataChanged();
+        dataChanged();
     }
     else if (operation === "+<=" ) {
         let temp = text.substring(text.indexOf("["));
@@ -134,7 +134,7 @@ browser.omnibox.onInputEntered.addListener((text, disposition) => {
         for (var i = 0; i < temp_sites.length; i++) {
             sites.push(temp_sites[i]);
         }
-				dataChanged();
+        dataChanged();
     }
     else {
         if ( arr.length > 1 ) {
